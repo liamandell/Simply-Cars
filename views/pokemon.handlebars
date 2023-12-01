@@ -1,0 +1,37 @@
+<section>
+   <div>
+    <h1>Pokemon</h1>
+     </div>
+    <form id="pokemon-form">
+        <input type="text" id="searchInput" placeholder="Type your search...">
+    <button id="searchButton">Search</button>
+    </form>
+    <section>
+        {{#each pokemon as |pokemon|}}
+        <div class="pokemon">
+            <h2>{{pokemon.name}}</h2>
+            <img src="{{pokemon.sprites.front_default}}" alt="pokemon image">
+            <p>Height: {{pokemon.height}}</p>
+            <p>Weight: {{pokemon.weight}}</p>
+            <p>Base Experience: {{pokemon.base_experience}}</p>
+            <p>Abilities: {{pokemon.abilities.0.ability.name}}, {{pokemon.abilities.1.ability.name}}</p>
+            <p>Types: {{pokemon.types.0.type.name}}, {{pokemon.types.1.type.name}}</p>
+        </div>
+        {{/each}}
+    </section>
+</section>
+
+
+    <script src="/js/pokemon.js">
+        
+
+
+
+
+
+
+
+
+
+
+    </script>

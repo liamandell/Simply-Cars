@@ -1,12 +1,18 @@
-//require("dotenv").config();
-var key = "78766eaa-a891-47bd-84d8-3e3aff4b1156"
-function getPokemon(){
-    let apiURL = `https://api.pokemontcg.io/v2/cards?q=name:charizard&X-Api-Key=${key}`;
-    fetch(apiURL).then(function(response){
-        return response.json();
-    }).then(function(data){
-        console.log(data);
+// Add an event listener to the search button
+const getPokemon = async (event) => { 
+    event.preventDefault();
+    const searchInput = document.getElementById('searchInput').value.trim();  
+    const response = await fetch("/api/pokemon", {
+        method: "POST",
+        body: JSON.stringify({searchInput}),
+        headers: {"Content-Type": "application/json"}
+
+    })
+    if (response.ok) {
+        console.log(response);
+        document.location.replace("/pokemon");
+    } else {
+        alert("Failed to get pokemon");
     }
-    )
 }
-getPokemon();
+document.querySelector("#pokemon-form").addEventListener('submit', getPokemon);

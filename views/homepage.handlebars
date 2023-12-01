@@ -1,4 +1,7 @@
-<!-- Loop over each object in the projects array -->
+<input type="text" id="pokemon"/> 
+ <button id="search">Search</button>
+ 
+
 {{#each projects as |project| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
@@ -13,7 +16,7 @@
       <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
       needed!
     </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+    
   </div>
   <div class="col-md-7">
     <p>
