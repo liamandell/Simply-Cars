@@ -1,27 +1,21 @@
+
+
 const router = require('express').Router();
-require('dotenv').config();
-console.log(process.env.POKEMON_API)
 
 
-router.post('/', async (req, res) => {
-    console.log(req.body,"this is req body")
-    console.log("hello")
-  try {
-        // const apiURL = `https://api.pokemontcg.io/v2/cards?q=name:${req.body}&X-Api-Key=${proccess.env.POKEMON_API}`;
-        // fetch(apiURL).then(function(response){
-        //     console.log(response, "this is response")
-        //     return response.json();
-            
-        // }).then(function(data){
-        //     console.log(data, "14==========9"); 
+
+
+router.get('/', async (req, res) => {
+    try { 
+        const response = await fetch(`https://api.pokemontcg.io/v2/cards?q=name:igor&X-Api-Key=78766eaa-a891-47bd-84d8-3e3aff4b1156`);
+        const data = await response.json();
+        console.log(data);
+
+        res.render('pokemon', {pokemon: data.name});
         
-        // }
-        // )
-       const pokemonData = await fetch (`https://api.pokemontcg.io/v2/cards?q=name:${req.body}&X-Api-Key=${process.env.POKEMON_API}`);
-         console.log(pokemonData, "this is pokemon data")
-  
-}catch (err) {
-    res.status(500).json(err);
-  }})
 
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 module.exports = router;
