@@ -1,2 +1,4 @@
 DROP DATABASE IF EXISTS poke_db;
 CREATE DATABASE poke_db;
+
+USE DATABASE poke_db;
