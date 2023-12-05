@@ -5,13 +5,8 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+    const projectData = await User.findAll({
+      
     });
 
     // Serialize data so the template can read it
@@ -79,4 +74,11 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get("/pokemon", async (req, res) => {
+  try {
+    res.render("pokemon");
+  } catch (error) {
+    res.status(500).json(error);
+  }
+ } )
 module.exports = router;
