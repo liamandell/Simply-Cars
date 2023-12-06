@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fund My Project!</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body id="searchpageHeader">
+  <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-2">
+    
+        <a id="hpSearchLogin" href= "/">Pokemon Search</a>
+    
+      <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">profile</a> |
+        <a href="/pokemon">pokemon</a> 
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a id="hpSearchLogin" href="/login">login</a>
+        {{/if}}
+      </nav>
+    </header>
+    <div id="title"> Who's That Pokemon?!
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    </div>
+    <main class="container container-fluid mt-5">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+    <footer>
+      
+   </footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+<div id="imagePoke">
+  <table callspan = 5>
+    <td> <img class="imagestyle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoUJ4F6Op4hqLKw5Ag6eBR3vNGCTwj0d7raw&usqp=CAU)" alt="pokemon"></td>
+    <td> <img class="imagestyle" src="/images/monsterpoke.jpg"></td>
+    <td> <img class="imagestyle" src="/images/penguin.png"></td>
+    <td> <img class="imagestyle" src="/images/pokemon.png"></td>
+    <td> <img class="imagestyle" src="/images/charmander.png"></td>
+  </table>
+  
+ 
+
+
+</div>
+</body>
+</html>
