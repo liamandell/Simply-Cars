@@ -1,3 +1,4 @@
+<section class="homepage">
 <input type="text" id="pokemon"/> 
  <button id="search">Search</button>
  
@@ -7,14 +8,13 @@
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
+      {{!-- {{{get_emoji}}} --}}
       <a href="/project/{{project.id}}">{{project.name}}</a>
     </h2>
     <p>
-      <span for="img" aria-label="money">💲</span>
+      {{!-- <span for="img" aria-label="money">💲</span> --}}
       <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
+      {{!-- <span class="dollar-amount">{{format_amount project.needed_funding}}</span> --}}
     </p>
     
   </div>
@@ -25,5 +25,6 @@
   </div>
 </div>
 {{/each}}
+</section>
 
 <script src="./js/pokemon.js"></script>

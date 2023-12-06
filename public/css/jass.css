@@ -70,6 +70,8 @@ pre {
  */
 a {
   background-color: yellowgreen;
+  border-radius: 3px;
+  padding: 0.25rem;
 }
 
 /**
@@ -425,7 +427,7 @@ a {
 }
 
 a:hover {
-  color: #065b83;
+  color: #f4d35e;
   text-decoration: underline;
 }
 
