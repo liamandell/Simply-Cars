@@ -68,11 +68,55 @@ pre {
 /**
  * Remove the gray background on active links in IE 10.
  */
-a {
-  background-color: yellowgreen;
-  border-radius: 3px;
-  padding: 0.25rem;
+.poke {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  background: none;
+  border: 2px solid #000;
+  font-family: "monsterrrat",sans-serif;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  min-width:  200px;
+  margin: 10px;
+  cursor: pointer;
+  transition: color 0.4s linear;
+  position:relative ;
+  text-decoration: none;
+  
 }
+
+.poke:hover{
+  color: #76b67a;
+}
+
+.poke::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #16055a;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+}
+
+.poke::before{
+  transform: scaleX(0);
+}
+.poke::before{
+  transform: scaleY(0);
+}
+
+.poke:hover::before{
+  transform: scaleX(1);
+}
+
+
+
+
 
 /**
  * 1. Remove the bottom border in Chrome 57-
@@ -1705,3 +1749,4 @@ form [type='radio'] {
     align-content: center;
   }
 }
+

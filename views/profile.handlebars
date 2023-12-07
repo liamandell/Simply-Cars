@@ -10,24 +10,32 @@
     <span role="img" aria-label="money"></span>
     <a href="/">Explore Pokemon!</a>
   </h12> --}}
-  <a href="/pokemon">Explore an Existing pokemon</a> 
+  <a class="poke"  href="/pokemon">Explore an Existing pokemon</a> 
 </div>
+
+
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Pokeman:</h3>
+
+    
+    <div class="loader">
+    <h3>Create A New Pokemon</h3>
+    </div>
+
+    
 
     <form class="form new-project-form">
       <div class="form-group">
-        <label for="project-name">Pokemon name:</label>
+        <label  class="pjn"  data-text="Pokemon Name:"   for="project-name">Pokemon name:</label>
         <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
       <div class="form-group">
-         <label for="project-funding">What type of pokemon you want to create?:</label> 
+         <label  class="pf"  data-text="Pokemon Type"    for="project-funding">Pokemon Type</label> 
         <input class="form-input" type="number" id="project-funding" name="project-funding" />
       </div>
       <div class="form-group">
-        <label for="project-desc">Description of the pokemon:</label>
+        <label class="des" data-text="Pokemon description"     for="project-desc">Pokemon Description</label>
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
       </div>
       <div class="form-group">
